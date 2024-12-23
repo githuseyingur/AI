@@ -2,6 +2,9 @@
 ```python
 from google.colab import drive
 drive.mount('/content/gdrive')
+
+## read file:
+df=pd.read_csv('gdrive/My Drive/text_data.csv')
 ```
 #### UNRAR/UNZIP
 ```python
