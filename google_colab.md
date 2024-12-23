@@ -1,3 +1,8 @@
+#### READ FILE FROM DRIVE
+```python
+from google.colab import drive
+drive.mount('/content/gdrive')
+```
 #### UNRAR/UNZIP
 ```python
 get_ipython().system_raw("unrar x ArcFace.rar")
