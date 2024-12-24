@@ -41,3 +41,59 @@ dataset(text_data.csv):<br><br>
 embeddings.csv:<br><br>
 <img width="400" alt="Screenshot 2024-12-24 at 10 43 07" src="https://github.com/user-attachments/assets/f801f8b3-94ea-4820-b749-4ec1402b1bde" /><br>
 <img width="400" alt="Screenshot 2024-12-24 at 10 43 17" src="https://github.com/user-attachments/assets/fb5c92dc-5f13-459c-9c37-4495750f8186" />
+
+#### Chat Completion
+```python
+import pandas as pd
+from sklearn.metrics.pairwise import cosine_similarity
+from colorama import Fore, init
+import openai
+
+openai.api_key = "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"
+
+# Embedding'leri içeren CSV'yi yükle
+df = pd.read_csv("embeddings.csv")
+df["embedding"] = df["embedding"].apply(eval)  # Liste formatına dönüştür.
+
+def get_gpt4_mini_response(user_question):
+    # OpenAI API çağrısı
+    response = openai.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=[
+        {'role': 'system', 'content': "Sen OPAK ERP programının canlı destek asistanısın. Fakat ERP programlarıyla ilgili teknik bir bilgi sorulursa 'Sorunuzu anlayamadım..Yardımcı olabileceğim farklı bir konu varsa lütfen yazmaktan çekinmeyin.' cevabını vereceksin."},
+        {'role': 'user', 'content': user_question},
+        ],
+        temperature=0,
+)
+    # Yanıtın içeriğine erişim
+    return response.choices[0].message.content
+
+while True:
+    user_question = input(f"{Fore.CYAN}KULLANICI(çıkmak için 'exit' yazın): ")
+
+    if user_question.lower() == 'exit':
+        print(f"{Fore.GREEN}Çıkılıyor...")
+        print(f"{Fore.BLACK}Çıkıldı!")
+        break
+
+    # Kullanıcı sorusunun embedding'ini al
+    user_embedding = get_embeddings([user_question])[0]
+
+    # Benzerlik hesapla
+    similarities = cosine_similarity([user_embedding], df["embedding"].tolist())
+    best_match_idx = similarities.argmax()
+    best_similarity = similarities[0][best_match_idx]
+
+    # Eşik değeri
+    threshold = 0.84
+
+    if best_similarity < threshold:
+        # GPT-4 Mini ile cevap oluştur
+        best_answer = get_gpt4_mini_response(user_question)
+    else:
+        best_answer = df.iloc[best_match_idx]["description"]
+
+    # Best Cevap
+    print(f"{Fore.RED}OPAK ERP CANLI DESTEK SİSTEMİ: {Fore.RESET}{best_answer}")
+```
+<img width="800" alt="chat" src="https://github.com/user-attachments/assets/e5d880b7-c98b-4d34-9d42-61e7fa2337ad" />
