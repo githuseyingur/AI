@@ -37,7 +37,7 @@ print(df)
 ```
 OUTPUT<br><br>
 dataset(text_data.csv):<br><br>
-<img width="400" alt="Screenshot 2024-12-24 at 10 42 44" src="https://github.com/user-attachments/assets/27fbac75-b840-4ee6-a522-87e8d30cbdb6" /><br>
+<img width="400" alt="Screenshot 2024-12-24 at 10 42 44" src="https://github.com/user-attachments/assets/27fbac75-b840-4ee6-a522-87e8d30cbdb6" /><br><br><br>
 embeddings.csv:<br><br>
 <img width="400" alt="Screenshot 2024-12-24 at 10 43 07" src="https://github.com/user-attachments/assets/f801f8b3-94ea-4820-b749-4ec1402b1bde" /><br>
 <img width="400" alt="Screenshot 2024-12-24 at 10 43 17" src="https://github.com/user-attachments/assets/fb5c92dc-5f13-459c-9c37-4495750f8186" />
