@@ -1,12 +1,12 @@
 ## Open AI Embedding
 Embedding Model: text-embedding-ada-002
 
-#### Install colorama for colored outputs
+####1. Install colorama for colored outputs
 ```python
 pip install colorama
 ```
 
-#### Get Embeddings and Save as CSV File
+####2. Get Embeddings and Save as CSV File
 - read dataset(csv)
 - openai API KEY
 - get embeddings
@@ -43,7 +43,7 @@ embeddings.csv:<br><br>
 <img width="400" alt="Screenshot 2024-12-24 at 10 43 07" src="https://github.com/user-attachments/assets/f801f8b3-94ea-4820-b749-4ec1402b1bde" /><br>
 <img width="400" alt="Screenshot 2024-12-24 at 10 43 17" src="https://github.com/user-attachments/assets/fb5c92dc-5f13-459c-9c37-4495750f8186" />
 
-#### Chat Completion
+####3. Chat Completion
 * Kullanıcı sorusunun <ins>threshold değeri küçükse</ins> (embedding değerine göre veri setindeki değerlere yakın değilse) : <b>chat completions</b>
 * Kullanıcı sorusunun <ins>threshold değeri büyükse</ins> (embedding değerine göre veri setindeki değerlere yakın bir değer varsa) : <b>embeddings.csv'deki cevap</b>
 ```python
