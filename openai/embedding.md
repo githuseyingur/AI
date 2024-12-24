@@ -1,3 +1,4 @@
+## Open AI Embedding
 Embedding Model: text-embedding-ada-002
 
 #### Install colorama for colored outputs
