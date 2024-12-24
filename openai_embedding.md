@@ -43,8 +43,8 @@ embeddings.csv:<br><br>
 <img width="400" alt="Screenshot 2024-12-24 at 10 43 17" src="https://github.com/user-attachments/assets/fb5c92dc-5f13-459c-9c37-4495750f8186" />
 
 #### Chat Completion
-* kullanıcı sorusunun <ins>threshold değeri küçükse</ins> (embedding değerine göre veri setindeki değerlere yakın değilse) : <b>chat completions</b>
-* kullanıcı sorusunun <ins>threshold değeri büyükse</ins> (embedding değerine göre veri setindeki değerlere yakın bir değer varsa) : <b>embeddings.csv'deki cevap</b>
+* Kullanıcı sorusunun <ins>threshold değeri küçükse</ins> (embedding değerine göre veri setindeki değerlere yakın değilse) : <b>chat completions</b>
+* Kullanıcı sorusunun <ins>threshold değeri büyükse</ins> (embedding değerine göre veri setindeki değerlere yakın bir değer varsa) : <b>embeddings.csv'deki cevap</b>
 ```python
 import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
