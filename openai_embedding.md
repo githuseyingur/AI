@@ -44,7 +44,7 @@ embeddings.csv:<br><br>
 
 #### Chat Completion
 * kullanıcı sorusunun <ins>threshold değeri küçükse</ins> (embedding değerine göre veri setindeki değerlere yakın değilse) : <b>chat completions</b>
-* kullanıcı sorusunun <ins>threshold değeri büyükse</ins> : <b>embeddings.csv'deki cevap</b>
+* kullanıcı sorusunun <ins>threshold değeri büyükse</ins> (embedding değerine göre veri setindeki değerlere yakın bir değer varsa) : <b>embeddings.csv'deki cevap</b>
 ```python
 import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
