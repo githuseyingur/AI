@@ -1,1 +1,1 @@
-## AI Codes & Notes
+## My Notes
