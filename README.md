@@ -1,6 +1,6 @@
 ## My AI Archive
-- Python Tutorials for AI
-- Machine Learning Tutorials
-- Deep Learning Tutorials
+- Python
+- Machine Learning
+- Deep Learning
 - AI Algorithms
-- Simple Demos
+- Basic Code Samples and Demos
